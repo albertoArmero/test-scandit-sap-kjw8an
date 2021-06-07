@@ -1,0 +1,50 @@
+/* Add application styles & imports to this file! */
+$primary:red;
+@import '@spartacus/styles/index';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+// sass variable
+
+$size: 6vmax;
+
+cx-product-images {
+  .thumbs {
+    position: absolute;
+
+    cx-media {
+      transition: all var(--cx-g-transition-duration);
+
+      background: #fff;
+
+      --cx-width: #{$size};
+      --cx-height: calc(0.9 * #{$size});
+
+      position: absolute !important;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          z-index: #{10 - $i};
+          left: #{($i - 1) * 1vw};
+        }
+      }
+      &.active {
+        --cx-border-color: var(--cx-g-color-light);
+      }
+    }
+
+    &:hover {
+      cx-media {
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: #{($i - 1) * $size};
+          }
+        }
+
+        &.active {
+          --cx-border-color: var(--cx-g-color-primary);
+        }
+      }
+    }
+  }
+}
