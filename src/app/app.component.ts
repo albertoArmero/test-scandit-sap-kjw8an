@@ -44,6 +44,7 @@ export class AppComponent  {
   constructor() {
     this.settings128 = new ScanSettings({
       enabledSymbologies: [Barcode.Symbology.CODE128],
+      codeDuplicateFilter: 3000
     });
     this.settings39 = new ScanSettings({
       enabledSymbologies: [Barcode.Symbology.CODE39],
@@ -77,7 +78,7 @@ export class AppComponent  {
     // API CALL to add to the Cart the item that corresponds to result.barcode
     //addToCart();
     //let cart = new AddToCart
-    let mycart = new CartAddEntry({cartId:'e4f6b7d5-ea5a-4ea7-a1ce-9f0c1a8e98f3',userId:'anonymous',productCode:'300938',quantity:1});
+    //let mycart = new CartAddEntry({cartId:'e4f6b7d5-ea5a-4ea7-a1ce-9f0c1a8e98f3',userId:'anonymous',productCode:'300938',quantity:1});
 
 
 
