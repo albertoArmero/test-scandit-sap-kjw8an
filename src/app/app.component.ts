@@ -82,9 +82,7 @@ export class AppComponent  {
     //let mycart = new CartAddEntry({cartId:'e4f6b7d5-ea5a-4ea7-a1ce-9f0c1a8e98f3',userId:'anonymous',productCode:'300938',quantity:1});
     let myservice = new AddToCartService();
     myservice.getLog();
-
-
-
+    myservice.printBarcode(result.barcodes);
 
 
   }
