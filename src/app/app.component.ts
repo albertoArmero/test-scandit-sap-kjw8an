@@ -83,6 +83,7 @@ export class AppComponent  {
     let myservice = new AddToCartService();
     myservice.getLog();
     myservice.printBarcode(result.barcodes);
+    myservice.addToCart();
 
 
   }
