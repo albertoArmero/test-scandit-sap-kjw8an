@@ -32,7 +32,7 @@
     "@schematics/angular": "11.2.6",
     "@spartacus/assets": "3.1.1",
     "@spartacus/cdc": "0.301.1",
-    "@spartacus/core": "^3.3.1",
+    "@spartacus/core": "^3.4.0",
     "@spartacus/schematics": "3.1.1",
     "@spartacus/setup": "3.1.1",
     "@spartacus/storefinder": "3.1.1",
