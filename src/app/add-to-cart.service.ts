@@ -41,7 +41,7 @@ constructor(private http: HttpClient, private activeCartService: ActiveCartServi
   /*addToCartHTTP(){
 
         //const headers = { 'Authorization': 'LOBjhYx3jPcC2H1s_eVFVPuWXvw', 'My-Custom-Header': 'foobar' };
-        const headers = { 'Authorization': `Bearer LOBjhYx3jPcC2H1s_eVFVPuWXvw`};
+        const headers = { 'Authorization': `Bearer my_Token`};
 
         //const body = { title: 'Angular POST Request Example' };
         this.http.post<any>('https://scandit-commerce2011cx.demo.hybris.com/occ/v2/electronics-spa/users/anonymous/carts/f3d73d65-21c4-4a45-b43f-142e4ad1d65a/entries?code=300938&qty=3&lang=en&curr=USD', { headers }).subscribe({            
