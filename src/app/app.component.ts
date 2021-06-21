@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Barcode, BarcodePicker, Camera, CameraAccess, CameraSettings, ScanResult, ScanSettings } from "scandit-sdk";
 import { BarcodeScannerComponent} from './barcode-scanner/barcode-scanner.component';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,7 @@ import { AddToCartService } from './add-to-cart.service';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
+@Injectable({providedIn:'root'})
 export class AppComponent  {
   name = 'Angular';
   faCoffee = faCoffee;
@@ -42,7 +43,7 @@ export class AppComponent  {
   public possibleCameras: Camera[] = [];
   
 
-  constructor() {
+  constructor(private addToCartService : AddToCartService) {
     this.settings128 = new ScanSettings({
       enabledSymbologies: [Barcode.Symbology.CODE128],
       codeDuplicateFilter: 3000
@@ -81,12 +82,14 @@ export class AppComponent  {
     //let cart = new AddToCart
     //let mycart = new CartAddEntry({cartId:'e4f6b7d5-ea5a-4ea7-a1ce-9f0c1a8e98f3',userId:'anonymous',productCode:'300938',quantity:1});
     //let myModalService = new ModalService();
-    let myservice = new AddToCartService();
-    myservice.getLog();
-    myservice.printBarcode(result.barcodes);
+    this.addToCartService.getLog();
+    this.addToCartService.addToCartHTTP();
+    //let myservice = new AddToCartService();
+    //myservice.getLog();
+    //myservice.printBarcode(result.barcodes);
     //myservice.addToCart();
-    myservice.addToCartHTTP();
-    myservice.addProductToCart();
+    //myservice.addToCartHTTP();
+    //myservice.addProductToCart();
 
 
   }

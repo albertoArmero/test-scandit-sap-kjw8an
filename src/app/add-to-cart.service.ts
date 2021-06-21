@@ -3,14 +3,18 @@ import { ActiveCartService, CartActions } from "@spartacus/core";
 import { AddToCartComponent } from "@spartacus/storefront";
 import { Barcode } from "scandit-sdk";
 import barcodeScannerComponentHtml from "./barcode-scanner/barcode-scanner.component.html";
+import { Injectable } from '@angular/core';
 
+@Injectable({providedIn:'root'})
 export class AddToCartService{
-private http: HttpClient;
+//private http: HttpClient;
+postId: any;
+errorMessage;
 //export class AddToCartService extends ActiveCartService{ 
 
-//  constructor(){
+constructor(private http: HttpClient){
 
-//  }
+ }
 
   getLog(){
 
@@ -25,9 +29,16 @@ private http: HttpClient;
 
   addToCartHTTP(){
 
-        const headers = { 'Authorization': 'LOBjhYx3jPcC2H1s_eVFVPuWXvw', 'My-Custom-Header': 'foobar' };
-        const body = { title: 'Angular POST Request Example' };
-        this.http.post<any>('https://scandit-commerce2011cx.demo.hybris.com/occ/v2/electronics-spa/users/anonymous/carts/f7b1f42f-abdd-459a-9a31-e0b1a0c29cf8/entries?code=300938&qty=3&lang=en&curr=USD', body, { headers });
+        //const headers = { 'Authorization': 'LOBjhYx3jPcC2H1s_eVFVPuWXvw', 'My-Custom-Header': 'foobar' };
+        const headers = { 'Authorization': 'LOBjhYx3jPcC2H1s_eVFVPuWXvw'};
+
+        //const body = { title: 'Angular POST Request Example' };
+        this.http.post<any>('https://scandit-commerce2011cx.demo.hybris.com/occ/v2/electronics-spa/users/anonymous/carts/f3d73d65-21c4-4a45-b43f-142e4ad1d65a/entries?code=300938&qty=3&lang=en&curr=USD', { headers }).subscribe({            
+                error: error => {
+                this.errorMessage = error.message;
+                console.error('There was an error!', error);
+                }
+        });
 
 
 
