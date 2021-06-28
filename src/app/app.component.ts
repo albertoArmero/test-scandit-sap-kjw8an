@@ -82,9 +82,9 @@ export class AppComponent  {
     //let cart = new AddToCart
     //let mycart = new CartAddEntry({cartId:'e4f6b7d5-ea5a-4ea7-a1ce-9f0c1a8e98f3',userId:'anonymous',productCode:'300938',quantity:1});
     //let myModalService = new ModalService();
-    this.addToCartService.getLog();
+    //this.addToCartService.getLog();
     this.addToCartService.addProductToCart();
-    this.addToCartService.addToCartHTTP();
+    //this.addToCartService.addToCartHTTP();
     //let myservice = new AddToCartService();
     //myservice.getLog();
     //myservice.printBarcode(result.barcodes);

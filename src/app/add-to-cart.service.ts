@@ -30,8 +30,8 @@ constructor(private http: HttpClient, private activeCartService: ActiveCartServi
   
   addProductToCart(){
   
-    this.activeCartService.addEntry('300938',2);
-    console.log('This is a TEST22');
+    this.activeCartService.addEntry('300938',1);
+    console.log('Product "300938" has been added to the cart');
 
 
     // let mycart = new CartActions.CartAddEntry({cartId:'f3d73d65-21c4-4a45-b43f-142e4ad1d65a',userId:'anonymous',productCode:'300938',quantity:1});
