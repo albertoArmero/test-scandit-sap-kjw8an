@@ -52,8 +52,8 @@ constructor(private http: HttpClient, private activeCartService: ActiveCartServi
     this.activeCartService.addEntry(mapped_product,1);
     //this.activeCartService.addEntry('300938',1);
     console.log('Product ' + mapped_product + ' has been added to the cart');
-    console.log(barcode[0].data);
-    console.log(mapped_product);
+    //console.log(barcode[0].data);
+    //console.log(mapped_product);
 
     // let mycart = new CartActions.CartAddEntry({cartId:'f3d73d65-21c4-4a45-b43f-142e4ad1d65a',userId:'anonymous',productCode:'300938',quantity:1});
   }
