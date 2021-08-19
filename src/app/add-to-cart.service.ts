@@ -51,7 +51,7 @@ constructor(private http: HttpClient, private activeCartService: ActiveCartServi
     //this.mapBarcodeWithProduct(barcode[0].data);
     this.activeCartService.addEntry(mapped_product,1);
     //this.activeCartService.addEntry('300938',1);
-    console.log('Product "300938" has been added to the cart');
+    console.log('Product ' + mapped_product + ' has been added to the cart');
     console.log(barcode[0].data);
     console.log(mapped_product);
 
