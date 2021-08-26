@@ -20,7 +20,7 @@ export class AppComponent  {
   public activeSettings: ScanSettings;
   public settings128: ScanSettings;
   public settings39: ScanSettings;
-  public scannerGuiStyle: BarcodePicker.GuiStyle = BarcodePicker.GuiStyle.VIEWFINDER;
+  public scannerGuiStyle: BarcodePicker.GuiStyle = BarcodePicker.GuiStyle.LASER;
   public activeCamera: Camera;
   public cameraSettings: CameraSettings;
   public scanningPaused: boolean = false;
@@ -38,6 +38,7 @@ export class AppComponent  {
   public enableVibrateOnScan: boolean = true;
   public cameraAccess: boolean = true;
   public enableSoundOnScan: boolean = true;
+  public isShowDiv: boolean = false;  
 
 
   public possibleCameras: Camera[] = [];
@@ -99,11 +100,19 @@ export class AppComponent  {
     this.cameraAccess = !this.cameraAccess;
     this.scanningPaused = !this.scanningPaused;
     this.visible = !this.visible;
-    
-
-
+    //this.showCameraDiv();
+    this.isShowDiv = !this.isShowDiv; 
+  
 
 
   }
+
+  public showCameraDiv(): void{
+    console.log('CAMERA OPENED');
+     
+      this.isShowDiv = !this.isShowDiv;  
+  }
+
+
 
 }

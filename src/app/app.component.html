@@ -7,6 +7,7 @@
     SCAN
     </i>
   </div>
+  <div [hidden]="isShowDiv">
     <scandit-sdk-barcode-picker #picker [accessCamera]="cameraAccess"
                             [camera]="activeCamera"
                             [cameraSettings]="cameraSettings"
@@ -22,11 +23,9 @@
                             [vibrateOnScan]="enableVibrateOnScan"
                             [videoFit]="videoFit"
                             [visible]="visible"
-                            [style.height]="height || '15vw'"
-                            [style.width]="width || '25vw'"
                             (scan)="onScan($event)"
                             (init)="isReady = false" (ready)="isReady = true"></scandit-sdk-barcode-picker>
-
+   </div>
 <ng-template>
 
 <!--
