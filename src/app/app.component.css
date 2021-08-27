@@ -12,3 +12,10 @@ p {
   display: inline-block;
   font-size: 20px;
 }
+
+.camera-style {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  object-fit: cover;
+}
