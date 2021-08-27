@@ -20,7 +20,7 @@ export class AppComponent  {
   public activeSettings: ScanSettings;
   public settings128: ScanSettings;
   public settings39: ScanSettings;
-  public scannerGuiStyle: BarcodePicker.GuiStyle = BarcodePicker.GuiStyle.LASER;
+  public scannerGuiStyle: BarcodePicker.GuiStyle = BarcodePicker.GuiStyle.VIEWFINDER;
   public activeCamera: Camera;
   public cameraSettings: CameraSettings;
   public scanningPaused: boolean = false;
