@@ -19,3 +19,9 @@ p {
   position: fixed;
   object-fit: cover;
 }
+
+.md-button.md-fab.md-mini {
+  line-height: 4rem;
+  width: 4rem;
+  height: 4rem;
+}
