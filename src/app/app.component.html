@@ -2,10 +2,9 @@
 
 <ng-template cxOutletRef="SearchBox" cxOutletPos="after">
   <div class="scan-button">
-    <i class="btn btn-secondary btn-block fas fa-barcode" type="button" (click)="setupCameraSettings()">
-    <!--<mat-icon>favorite</mat-icon>-->
-    SCAN
-    </i>
+   <button mat-fab aria-label="Button to initiate Scandit scanner" (click)="setupCameraSettings()">
+      <mat-icon svgIcon="barcodeicon"></mat-icon>
+    </button>
   </div>
   <div [hidden]="isShowDiv">
     <scandit-sdk-barcode-picker #picker [accessCamera]="cameraAccess"

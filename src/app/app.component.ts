@@ -1,7 +1,11 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Inject, Injectable } from '@angular/core';
 import { Barcode, BarcodePicker, Camera, CameraAccess, CameraSettings, ScanResult, ScanSettings } from "scandit-sdk";
 import { BarcodeScannerComponent} from './barcode-scanner/barcode-scanner.component';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { AddToCartComponent, ModalService } from '@spartacus/storefront';
 import { AddToCartModule} from '@spartacus/storefront';
 import { CartAddEntry } from '@spartacus/core/src/cart/store/actions/cart-entry.action';
@@ -44,7 +48,17 @@ export class AppComponent  {
   public possibleCameras: Camera[] = [];
   
 
-  constructor(private addToCartService : AddToCartService) {
+  constructor(private addToCartService : AddToCartService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer, @Inject(PLATFORM_ID) private platformId: string) {
+
+      const svgUrl = 'assets/Barcode_icon.svg';
+      console.log(platformId);
+      console.log(isPlatformServer(platformId));
+      // domain and port for SSR in this example is static. Use i.e. environment files to use appropriate dev/prod domain:port
+      const domain = (isPlatformServer(platformId)) ? 'http://localhost:4000/' : ''; 
+
+      this.matIconRegistry.addSvgIcon('barcodeicon', this.domSanitizer.bypassSecurityTrustResourceUrl(domain + svgUrl));
+
+
     this.settings128 = new ScanSettings({
       enabledSymbologies: [Barcode.Symbology.CODE128],
       codeDuplicateFilter: 3000

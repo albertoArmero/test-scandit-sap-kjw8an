@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { ScanditSdkModule } from "scandit-sdk-angular";
 
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from "@angular/common/http";
 
 import { ConfigModule } from '@spartacus/core';
 import { translations, translationChunksConfig } from '@spartacus/assets';
@@ -47,7 +49,9 @@ const engineLocation: string = "https://cdn.jsdelivr.net/npm/scandit-sdk@5.x/bui
 
     }),
     ScanditSdkModule.forRoot(licenseKey, {engineLocation}),
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [AddToCartService],
   bootstrap: [AppComponent]

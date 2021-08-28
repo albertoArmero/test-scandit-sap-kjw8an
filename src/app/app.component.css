@@ -5,7 +5,7 @@ p {
 .scan-button {
   background-color: #ffffff00; /* Transparent */
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 12px 20px;
   text-align: center;
   text-decoration: none;
@@ -25,3 +25,32 @@ p {
   width: 4rem;
   height: 4rem;
 }
+
+.example-button-row button{
+  margin-right: 8px;
+}
+
+/* Success syling */
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+    color: #155724;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: #0b9287;
+}
+
+.mat-fab.mat-success {
+  color: #f0fff3;
+  background-color: #155724;
+}
+
+.mat-icon-button.mat-success {
+  color:#155724;
+}
+
+.mat-fab.mat-accent {
+  background-color: #0fa79f;
+}
+
