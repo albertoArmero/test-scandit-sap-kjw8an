@@ -10,7 +10,7 @@ p {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .camera-style {
@@ -51,6 +51,6 @@ p {
 }
 
 .mat-fab.mat-accent {
-  background-color: #0fa79f;
+  background-color: #747881;
 }
 

@@ -53,10 +53,11 @@ export class AppComponent  {
       const svgUrl = 'assets/Barcode_icon.svg';
       console.log(platformId);
       console.log(isPlatformServer(platformId));
+      console.log(window.location.origin);
       // domain and port for SSR in this example is static. Use i.e. environment files to use appropriate dev/prod domain:port
       const domain = (isPlatformServer(platformId)) ? 'http://localhost:4000/' : ''; 
 
-      this.matIconRegistry.addSvgIcon('barcodeicon', this.domSanitizer.bypassSecurityTrustResourceUrl(domain + svgUrl));
+      this.matIconRegistry.addSvgIcon('barcodeicon', this.domSanitizer.bypassSecurityTrustResourceUrl("https://upload.wikimedia.org/wikipedia/commons/3/3a/Example_barcode.svg"));
 
 
     this.settings128 = new ScanSettings({
