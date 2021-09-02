@@ -13,57 +13,15 @@ p {
   font-size: 8px;
 }
 
-.camera-style {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  object-fit: cover;
-}
-
-.md-button.md-fab.md-mini {
-  line-height: 4rem;
-  width: 4rem;
-  height: 4rem;
-}
-
-.example-button-row button{
-  margin-right: 8px;
-}
-
-/* Success syling */
-
-.mat-button.mat-success,
-.mat-stroked-button.mat-success {
-    color: #155724;
-}
-.mat-button.mat-success:hover,
-.mat-stroked-button.mat-success:hover {
-  background-color: #0b9287;
-}
-
-.mat-fab.mat-success {
-  color: #f0fff3;
-  background-color: #155724;
-}
-
-.mat-icon-button.mat-success {
-  color:#155724;
-}
 
 .mat-fab.mat-accent {
   background-color: #747881;
 }
 
-/*.mat-icon {
-  line-height: 0rem;
-  width: 3rem;
-  height: 3rem;
-  } */
-
-  .icon-display {
-    transform: scale(1.5);
-    font-size: 8px;
-    line-height: 1rem
+.icon-display {
+  transform: scale(1.5);
+  font-size: 8px;
+  line-height: 1rem
 
  }
 
