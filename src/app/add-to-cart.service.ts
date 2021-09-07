@@ -1,12 +1,11 @@
-import { HttpClient } from "@angular/common/http";
-import { ActiveCartService, CartActions, BadRequestHandler, CartVoucherService } from "@spartacus/core";
+import { ActiveCartService} from "@spartacus/core";
 import { Barcode } from "scandit-sdk";
 import { Injectable } from '@angular/core';
 
 @Injectable({providedIn:'root'})
 export class AddToCartService{
 
-constructor(private http: HttpClient, private activeCartService: ActiveCartService, private errorVoucher: CartVoucherService){
+constructor(private activeCartService: ActiveCartService){
  }
   
   addProductToCart(barcode: Barcode[]){
@@ -42,8 +41,6 @@ constructor(private http: HttpClient, private activeCartService: ActiveCartServi
         break; 
       }   
       default: { 
-        mapped_product = 'InvalidProductID';
-        this.invalidProduct();
         break; 
       } 
   } 
@@ -51,11 +48,5 @@ constructor(private http: HttpClient, private activeCartService: ActiveCartServi
     return mapped_product;
   }
 
-  invalidProduct(){
-
-    var cart_ID:string;
-    this.errorVoucher.addVoucher("invalidProductID",cart_ID);
-    
-  }
 
 }

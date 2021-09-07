@@ -106,7 +106,7 @@
           "isocode": "Missing country/region"
         },
         "product": {
-          "code": "Product Not Valid"
+          "code": "Product not found in catalogue"
        }
       },
       "invalid": {
@@ -127,6 +127,10 @@
     "item_plural": "{{count}} items currently in your cart",
     "total": "{{total}}",
     "count": "{{count}}"
+  },
+  "miniLogin": {
+    "userGreeting": "Hi, {{name}}",
+    "signInRegister": "Sign In / Register"
   },
   "skipLink": {
     "skipTo": "Skip to",
