@@ -43,8 +43,10 @@ const engineLocation: string = "https://cdn.jsdelivr.net/npm/scandit-sdk@5.x/bui
     },
     i18n: {
       resources: translations,
+      backend:{
+        loadPath: 'assets/i18n-assets/en/common.json',
+      },
       chunks: translationChunksConfig,
-      fallbackLang: 'en'
     }
 
     }),
